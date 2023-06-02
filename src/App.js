@@ -1,5 +1,6 @@
 import Counter from './components/Counter';
 
+// imort redux state
 
 function App() {
   return (
