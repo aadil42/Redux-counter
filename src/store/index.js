@@ -1,8 +1,8 @@
-import { createStore } from 'redux';
+// import { createStore } from 'redux';
 // const redux = require('redux');
 
 
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, configureStore} from '@reduxjs/toolkit';
 
 const initialState = {
     counter: 0,
@@ -28,34 +28,38 @@ const counterSlice = createSlice({
     }
 });
 
-const counterReducer = (state = initialState, action) => {
-    if(action.type === "INCREAMENT") {
-        return {
-            ...state,
-            counter: state.counter + action.value
-        }
-    }
+const store = configureStore({
+    reducer: {counter: counterSlice.reducer}
+});
 
-    if(action.type === 'DECREAMENT') {
-        return {
-            ...state,
-            counter: state.counter - action.value
-        }
-    }
-
-    if(action.type ===  'TOGGLE') {
-        return {
-            ...state,
-            showCounter: !state.showCounter
-        }
-    }
-
-    return state;
-}
-
-const store = createStore(counterReducer);
+// const store = createStore(counterReducer);
 
 export default store;
+
+// const counterReducer = (state = initialState, action) => {
+//     if(action.type === "INCREAMENT") {
+//         return {
+//             ...state,
+//             counter: state.counter + action.value
+//         }
+//     }
+
+//     if(action.type === 'DECREAMENT') {
+//         return {
+//             ...state,
+//             counter: state.counter - action.value
+//         }
+//     }
+
+//     if(action.type ===  'TOGGLE') {
+//         return {
+//             ...state,
+//             showCounter: !state.showCounter
+//         }
+//     }
+
+//     return state;
+// }
 
 
 // const CounterWrapper = () => {
