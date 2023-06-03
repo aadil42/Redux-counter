@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import classes from './Auth.module.css';
 
 // getting the actions
-import { authActions } from '../store';
+import { authActions } from '../store/authSlice';
 
 import { useDispatch } from 'react-redux';
 

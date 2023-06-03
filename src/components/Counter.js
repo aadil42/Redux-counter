@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 // get counterActions
-import { counterActions } from '../store';
+import { counterActions } from '../store/counterSlice';
 
 const Counter = () => {
   const counter = useSelector(state => state.counter.counter);
