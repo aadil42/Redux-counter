@@ -1,10 +1,18 @@
+import { Fragment } from 'react';
+
 import Counter from './components/Counter';
 
-// imort redux state
+import Header from './components/Header';
+import UserProfile from './components/UserProfile';
+import Auth from './components/Auth';
 
 function App() {
   return (
-    <Counter />
+    <Fragment>
+      <Header />
+      <Auth />
+      <Counter />
+    </Fragment>
   );
 }
 
