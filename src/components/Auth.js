@@ -1,17 +1,37 @@
+import { useRef } from 'react';
 import classes from './Auth.module.css';
 
+// getting the actions
+import { authActions } from '../store';
+
+import { useDispatch } from 'react-redux';
+
 const Auth = () => {
+
+  const emailInput = useRef(null);
+  const passwordInput = useRef(null);
+
+  const dispatch = useDispatch();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if(emailInput.current.value && passwordInput.current.value) {
+      dispatch(authActions.logIn());
+    }
+  }
+
   return (
     <main className={classes.auth}>
       <section>
-        <form>
+        <form onSubmit={submitHandler}>
           <div className={classes.control}>
             <label htmlFor='email'>Email</label>
-            <input type='email' id='email' />
+            <input ref={emailInput} type='email' id='email' />
           </div>
           <div className={classes.control}>
             <label htmlFor='password'>Password</label>
-            <input type='password' id='password' />
+            <input ref={passwordInput} type='password' id='password' />
           </div>
           <button>Login</button>
         </form>
