@@ -12,7 +12,7 @@ function App() {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
   return (
-    <Fragment>
+    <Fragment>  
       <Header />
       {!isAuthenticated && <Auth />}
       {isAuthenticated && <UserProfile />}

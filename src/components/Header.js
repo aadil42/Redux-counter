@@ -15,13 +15,12 @@ const Header = () => {
   const loginHandler = () => {
     dispatch(authActions.logIn());
   }
+  const logoutHandler = () => {
+    dispatch(authActions.logOut());
+  }
 
   let nav = <nav>
-              <ul>
-                <li>
-                <button onClick={loginHandler}>LogIn</button>
-                </li>
-              </ul>
+
             </nav>;
 
   if(isAuthenticated) {
@@ -32,6 +31,9 @@ const Header = () => {
                     </li>
                     <li>
                       <a href='/'>My Sales</a>
+                    </li>
+                    <li>
+                    <button onClick={logoutHandler}>Logout</button>
                     </li>
                   </ul>
           </nav>;

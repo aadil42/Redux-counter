@@ -15,10 +15,11 @@ const Auth = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    if(emailInput.current.value && passwordInput.current.value) {
-      dispatch(authActions.logIn());
-    }
+    dispatch(authActions.logIn(
+    {
+     email: emailInput.current.value,
+     password: passwordInput.current.value
+    }));
   }
 
   return (
