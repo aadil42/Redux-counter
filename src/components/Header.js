@@ -15,9 +15,6 @@ const Header = () => {
   const loginHandler = () => {
     dispatch(authActions.logIn());
   }
-  const logoutHandler = () => {
-    dispatch(authActions.logOut());
-  }
 
   let nav = <nav>
               <ul>
@@ -35,9 +32,6 @@ const Header = () => {
                     </li>
                     <li>
                       <a href='/'>My Sales</a>
-                    </li>
-                    <li>
-                    <button onClick={logoutHandler}>Logout</button>
                     </li>
                   </ul>
           </nav>;
